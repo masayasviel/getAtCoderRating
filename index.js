@@ -15,7 +15,7 @@ const colouring = rate=>{
 getRatingButton.addEventListener("click", ()=>{
     let username = document.getElementById("nameBox").value;
     if(!username.trim()) username= "tourist";
-    const query = "http://localhost:3000/?username=" + username;
+    const query = "http://localhost:3000?username=" + username;
     fetch(query, {
         mode: "cors",
       })
