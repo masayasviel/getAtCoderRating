@@ -18,13 +18,13 @@ getRatingButton.addEventListener("click", ()=>{
     const query = "http://localhost:3000?username=" + username;
     fetch(query, {
         mode: "cors",
-      })
-        .then(res=>res.json())
-        .then(res=>{
-            let div = document.createElement("div");
-            const color = colouring(res.rating);
-            div.textContent = username + ": " + res.rating;
-            div.setAttribute("color", color);
-            document.getElementById("ratings").appendChild(div);
-        }, err=>console.error('Error:', err));
+    })
+    .then(res=>res.json())
+    .then(res=>{
+        let font = document.createElement("font");
+        const colorcode = colouring(Number(res.rating));
+        font.textContent = username + ": " + res.rating + "\n";
+        font.setAttribute("color", colorcode);
+        document.getElementById("ratings").appendChild(font);
+    }, err=>console.error('Error:', err));
 }, false);
